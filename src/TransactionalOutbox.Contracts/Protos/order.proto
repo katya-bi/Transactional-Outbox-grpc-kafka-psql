@@ -1,0 +1,18 @@
+﻿syntax = "proto3";
+
+package transactional_outbox.order_service.grpc;
+
+option csharp_namespace = "TransactionalOutbox.Grpc";
+
+service OrderService {
+  rpc CreateOrder (CreateOrderRequest) returns (CreateOrderResponse);
+}
+
+message CreateOrderRequest {
+  string user_id = 1;
+  repeated int64 product_ids = 2;
+}
+
+message CreateOrderResponse {
+  string orderId = 1;
+}

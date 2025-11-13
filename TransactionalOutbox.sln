@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{FD044811-3F99-40C5-A0C5-88D146B753D3}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		Directory.Build.props = Directory.Build.props
+		Directory.Packages.props = Directory.Packages.props
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{882DF797-5916-4F19-984B-2F0CF29E7439}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransactionalOutbox.NotificationService", "src\TransactionalOutbox.NotificationService\TransactionalOutbox.NotificationService.csproj", "{924313D2-ACD5-4407-A3BB-C6D3DF9361D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransactionalOutbox.OrderService", "src\TransactionalOutbox.OrderService\TransactionalOutbox.OrderService.csproj", "{7AB44EF5-F538-4142-9057-C3861E26366E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransactionalOutbox.Contracts", "src\TransactionalOutbox.Contracts\TransactionalOutbox.Contracts.csproj", "{8F499FD7-F8A9-4AD7-8EEE-8743456C74BD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{924313D2-ACD5-4407-A3BB-C6D3DF9361D8} = {882DF797-5916-4F19-984B-2F0CF29E7439}
+		{7AB44EF5-F538-4142-9057-C3861E26366E} = {882DF797-5916-4F19-984B-2F0CF29E7439}
+		{8F499FD7-F8A9-4AD7-8EEE-8743456C74BD} = {882DF797-5916-4F19-984B-2F0CF29E7439}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{924313D2-ACD5-4407-A3BB-C6D3DF9361D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{924313D2-ACD5-4407-A3BB-C6D3DF9361D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{924313D2-ACD5-4407-A3BB-C6D3DF9361D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{924313D2-ACD5-4407-A3BB-C6D3DF9361D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AB44EF5-F538-4142-9057-C3861E26366E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AB44EF5-F538-4142-9057-C3861E26366E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AB44EF5-F538-4142-9057-C3861E26366E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AB44EF5-F538-4142-9057-C3861E26366E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F499FD7-F8A9-4AD7-8EEE-8743456C74BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F499FD7-F8A9-4AD7-8EEE-8743456C74BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F499FD7-F8A9-4AD7-8EEE-8743456C74BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F499FD7-F8A9-4AD7-8EEE-8743456C74BD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

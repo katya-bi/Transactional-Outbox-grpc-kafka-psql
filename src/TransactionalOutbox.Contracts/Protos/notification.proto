@@ -1,0 +1,24 @@
+﻿syntax = "proto3";
+
+package transactional_outbox.notification_service.grpc;
+
+option csharp_namespace = "TransactionalOutbox.Grpc";
+
+service NotificationService {
+  rpc GetUserNotifications (GetUserNotificationsRequest) returns (GetUserNotificationsResponse);
+}
+
+message GetUserNotificationsRequest {
+  string userId = 1;
+}
+
+message GetUserNotificationsResponse {
+  repeated Notification notifications = 1;
+
+  message Notification {
+    string id = 1;
+    string orderId = 2;
+    string message = 3;
+    string createdAt = 4;
+  }
+}
