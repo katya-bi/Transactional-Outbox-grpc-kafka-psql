@@ -31,6 +31,7 @@ internal static class ServiceCollectionExtensions
     private static IServiceCollection AddRepositories(this IServiceCollection services)
     {
         return services
-            .AddScoped<IOrderRepository, OrderRepository>();
+            .AddScoped<IOrderRepository, OrderRepository>()
+            .AddScoped<IOutboxRepository, OutboxRepository>();
     }
 }

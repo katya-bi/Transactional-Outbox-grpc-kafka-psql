@@ -18,7 +18,11 @@ message GetUserNotificationsResponse {
   message Notification {
     string id = 1;
     string orderId = 2;
-    string message = 3;
+    Type type = 3;
     string createdAt = 4;
+  }
+  
+  enum Type {
+    OrderCreated = 0;
   }
 }

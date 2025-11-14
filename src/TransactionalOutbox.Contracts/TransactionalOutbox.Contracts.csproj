@@ -10,6 +10,7 @@
         <Protobuf Include="Protos\*.proto" GrpcServices="Both" />
     </ItemGroup>
     <ItemGroup>
+        <PackageReference Include="Confluent.Kafka" />
         <PackageReference Include="Google.Protobuf" />
         <PackageReference Include="Grpc.Core.Api" />
         <PackageReference Include="Grpc.Tools">
