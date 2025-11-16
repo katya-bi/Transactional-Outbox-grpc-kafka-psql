@@ -1,5 +1,6 @@
 ﻿using TransactionalOutbox.OrderService.BackgroundServices;
 using TransactionalOutbox.OrderService.Database;
+using TransactionalOutbox.OrderService.Kafka;
 using TransactionalOutbox.OrderService.Services;
 
 namespace TransactionalOutbox.OrderService;
@@ -18,6 +19,7 @@ public class Startup
         services.AddGrpcReflection();
         services.AddGrpc();
         services.AddDatabase(_configuration);
+        services.AddKafka(_configuration);
         services.AddBackgroundServices();
         services.AddServices();
     }

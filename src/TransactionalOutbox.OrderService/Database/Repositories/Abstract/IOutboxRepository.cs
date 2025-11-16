@@ -4,5 +4,5 @@ namespace TransactionalOutbox.OrderService.Database.Repositories.Abstract;
 
 internal interface IOutboxRepository
 {
-    Task CreateOutboxMessage(OutboxMessage outboxMessage, CancellationToken ct);
+    Task CreateOutboxMessage(string payload, CancellationToken ct);
 }

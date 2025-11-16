@@ -15,11 +15,11 @@ internal class OutboxRepository : IOutboxRepository
         _connectionFactory = connectionFactory;
     }
     
-    public async Task CreateOutboxMessage(OutboxMessage outboxMessage, CancellationToken ct)
+    public async Task CreateOutboxMessage(string payload, CancellationToken ct)
     {
         var parameters = new
         {
-            Payload = outboxMessage.Payload,
+            Payload = payload,
             CreatedAt = DateTimeOffset.UtcNow
         };
 

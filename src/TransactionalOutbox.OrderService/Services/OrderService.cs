@@ -1,7 +1,8 @@
 ﻿using System.Text.Json;
+using TransactionalOutbox.Contracts.Outbox.Enums;
+using TransactionalOutbox.Contracts.Outbox.Models;
 using TransactionalOutbox.OrderService.Database.Interfaces;
 using TransactionalOutbox.OrderService.Database.Repositories.Abstract;
-using TransactionalOutbox.OrderService.Enums;
 using TransactionalOutbox.OrderService.Models;
 using TransactionalOutbox.OrderService.Services.Abstact;
 
@@ -32,15 +33,15 @@ internal class OrderService : IOrderService
             dto.ProductIds,
             "Created");
         var orderId = await _orderRepository.CreateOrder(order, ct);
-        
-        var outboxMessagePayload = new
-        {
-            UserId = dto.UserId,
-            OrderId = orderId,
-            Type = OutboxMessageType.OrderCreated
-        };
-        var outboxMessage = new OutboxMessage(JsonSerializer.Serialize(outboxMessagePayload));
-        await _outboxRepository.CreateOutboxMessage(outboxMessage, ct);
+
+        var outboxMessagePayload = new OutboxMessagePayload
+        (
+            dto.UserId,
+            orderId,
+            OutboxMessageType.OrderCreated
+        );
+        var payload = JsonSerializer.Serialize(outboxMessagePayload);
+        await _outboxRepository.CreateOutboxMessage(payload, ct);
 
         await tx.Commit();
         return orderId;
