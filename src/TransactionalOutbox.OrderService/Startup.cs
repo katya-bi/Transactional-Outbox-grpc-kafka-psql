@@ -20,7 +20,7 @@ public class Startup
         services.AddGrpc();
         services.AddDatabase(_configuration);
         services.AddKafka(_configuration);
-        services.AddBackgroundServices();
+        services.AddBackgroundServices(_configuration);
         services.AddServices();
     }
 

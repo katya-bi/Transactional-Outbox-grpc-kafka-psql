@@ -2,5 +2,5 @@
 
 internal interface IKafkaProducer<TKey, TValue> : IDisposable
 {
-    Task Publish(IEnumerable<(TKey key, TValue value)> messages, CancellationToken ct);
+    Task Produce(IEnumerable<(TKey key, TValue value)> messages, CancellationToken ct);
 }

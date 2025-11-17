@@ -42,7 +42,7 @@ internal sealed class KafkaProducer<TKey, TValue> : IKafkaProducer<TKey, TValue>
         _producer.Dispose();
     }
 
-    public async Task Publish(IEnumerable<(TKey key, TValue value)> messages, CancellationToken ct)
+    public async Task Produce(IEnumerable<(TKey key, TValue value)> messages, CancellationToken ct)
     {
         var tasks = new List<Task>(ChunkSize);
 
