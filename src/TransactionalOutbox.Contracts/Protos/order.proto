@@ -14,5 +14,5 @@ message CreateOrderRequest {
 }
 
 message CreateOrderResponse {
-  string orderId = 1;
+  string order_id = 1;
 }
