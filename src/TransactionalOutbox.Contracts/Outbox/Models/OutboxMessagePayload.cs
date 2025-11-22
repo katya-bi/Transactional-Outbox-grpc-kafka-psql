@@ -2,4 +2,4 @@
 
 namespace TransactionalOutbox.Contracts.Outbox.Models;
 
-public record OutboxMessagePayload(Guid UserId, Guid OrderId, OutboxMessageType  Type);
+public record OutboxMessagePayload(Guid UserId, Guid OrderId, OutboxMessageType Type);
