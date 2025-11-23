@@ -2,9 +2,9 @@
 
 internal static class ServiceCollectionExtensions
 {
-    public static IServiceCollection AddBackgroundServices(this IServiceCollection services, IConfiguration configuration)
+    public static IServiceCollection AddBackgroundServices(this IServiceCollection services)
     {
         return services
-            .AddHostedService<OutboxWorker>();
+            .AddHostedService<DbMigrationBackgroundService>();
     }
 }

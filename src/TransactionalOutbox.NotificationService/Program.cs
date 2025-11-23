@@ -50,8 +50,7 @@ static IHost CreateAndConfigureHost(string[] args)
         })
         .ConfigureWebHostDefaults(webBuilder =>
         {
-            webBuilder
-                .UseStartup<Startup>();
+            webBuilder.UseStartup<Startup>();
         });
 
     return hostBuilder.Build();

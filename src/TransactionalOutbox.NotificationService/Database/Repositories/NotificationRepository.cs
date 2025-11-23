@@ -16,13 +16,13 @@ internal class NotificationRepository : INotificationRepository
         _connectionFactory = connectionFactory;
     }
 
-    public async Task<Notification[]> GetNotifications(Guid userId, long limit, long offset, CancellationToken ct)
+    public async Task<Notification[]> GetNotifications(GetNotifications dto, CancellationToken ct)
     {
         var parameters = new
         {
-            UserId = userId,
-            Limit = limit,
-            Offset = offset
+            UserId = dto.UserId.ToString(),
+            Limit = dto.Limit,
+            Offset = dto.Offset
         };
         const string sql = $"""
                             SELECT id, user_id, order_id, type, created_at
@@ -51,7 +51,7 @@ internal class NotificationRepository : INotificationRepository
             Ids = notifications.Select(n => n.Id.ToString()).ToArray(),
             UserIds = notifications.Select(n => n.UserId.ToString()).ToArray(),
             OrderIds = notifications.Select(n => n.OrderId.ToString()).ToArray(),
-            Types = notifications.Select(n => n.Type).ToArray(),
+            Types = notifications.Select(n => (int)n.Type).ToArray(),
             CreatedAt = DateTimeOffset.UtcNow
         };
 

@@ -1,5 +1,6 @@
 ﻿using TransactionalOutbox.NotificationService.BackgroundServices;
 using TransactionalOutbox.NotificationService.Database;
+using TransactionalOutbox.NotificationService.Kafka;
 using TransactionalOutbox.NotificationService.Services;
 
 namespace TransactionalOutbox.NotificationService;
@@ -18,7 +19,8 @@ public class Startup
         services.AddGrpcReflection();
         services.AddGrpc();
         services.AddDatabase(_configuration);
-        services.AddBackgroundServices(_configuration);
+        services.AddBackgroundServices();
+        services.AddKafka(_configuration);
         services.AddServices();
     }
 

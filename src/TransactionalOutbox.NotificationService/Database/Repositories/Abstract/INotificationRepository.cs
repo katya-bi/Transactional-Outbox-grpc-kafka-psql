@@ -4,6 +4,6 @@ namespace TransactionalOutbox.NotificationService.Database.Repositories.Abstract
 
 internal interface INotificationRepository
 {
-    Task<Notification[]> GetNotifications(Guid userId, long limit, long offset, CancellationToken ct);
+    Task<Notification[]> GetNotifications(GetNotifications dto, CancellationToken ct);
     Task SetNotifications(Notification[] notifications, CancellationToken ct);
 }
